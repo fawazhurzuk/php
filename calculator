@@ -1,0 +1,42 @@
+<?php
+$continue = true;
+$total = 0;
+while($continue){
+ $num1 = (int)readline("Enter number one: ");
+ $num2 = (int)readline("Enter number two: ");
+ 
+ $operator = readline("What operation do you want to perform: 
+ +.Addition
+ -.Substraction
+ *.Multiply
+ /.Divide" ."\n");
+ 
+ switch($operator){
+     case '+';
+     $total = $num1 + $num2;
+     break;
+    
+     case '-';
+     $total = $num1 - $num2;
+     break;
+     
+     case '*';
+     $total = $num1 * $num2;
+     break;
+     
+     case '/';
+     $total = $num1 / $num2;
+     break;
+ }
+echo $total ."\n";
+ $response = strtolower(readline("Do you want to perform another calculation?:"));
+
+ if($response === "no" || $response === "n"){
+     $continue = false;
+ }elseif($response != "yes" && $response != "y"){
+    echo "wrong response terminating program.\n";
+    $continue = false; 
+ }
+}
+echo "calculator finished" ."\n";
+?>
